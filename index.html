@@ -16,13 +16,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <hr id="imzali">
 
 <!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+<div>
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:20%;min-width:300px" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()"
-  class="w3-bar-item w3-button">Menüyü Kapat</a>
-  <a href="#imzali" onclick="w3_close()" class="w3-bar-item w3-button">İmzalı Araçlar</a>
-   <a href="#normal" onclick="w3_close()" class="w3-bar-item w3-button">Bağışçı Araçları</a>
- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Server Hk.</a>
+  class="w3-bar-item w3-button w3-round">• Menüyü Kapat</a>
+  <button class="dropdown-btn w3-bar-item w3-button w3-round"> • İmzalı Araçlar 
+    <i class="fa fa-caret-down"></i>
+     </button>
+     <div href="javascript:void(0)" class="dropdown-container w3-animate-left">
+     	<a href="#imzasiz" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green w3-large w3-padding-small w3-round">• Satılıklar</a>
+   		<a href="#imzali" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red w3-large w3-padding-small w3-round">• İmzalananlar</a>
+   	 </div>
+ <a href="#normal" onclick="w3_close()" class="w3-bar-item w3-button w3-round">• Bağışçı Araçları</a>
+ <a href="#motor" onclick="w3_close()" class="w3-bar-item w3-button w3-round">• Bağışçı Motorları</a>
+ <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-round">• Server Hk.</a>
 </nav>
+</div>
 
 <!-- Top menu -->
 <div class="w3-top">
@@ -760,6 +769,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
           <img src="https://i.imgur.com/Njcrw2I.gif" alt="mahlukfade" style="width:50%">
     </div>
   
+  <hr id="motor">
+    
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h2>Bağışçı Motorları</h2>
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="normal">
+      <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-wrapper"><br>
+      <img src="https://i.imgur.com/XTVmef1.png" alt="normalarac" style="width:50%">
+      <h3>💲 Chevrolet Chevelle 1970: 300₺ 💲</h3>
+    </div>
+          <img src="https://i.imgur.com/Njcrw2I.gif" alt="mahlukfade" style="width:50%">
+    </div>
+      <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-wrapper">
+      <img src="https://i.imgur.com/Zww4K8B.png" alt="normalarac" style="width:50%">
+      <h3>💲 Plymouth GTX: 350₺ 💲</h3>
+    </div>
+          <img src="https://i.imgur.com/Njcrw2I.gif" alt="mahlukfade" style="width:50%">
+    </div>
     </div>
   </div>
   
@@ -770,7 +800,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32 w3-center">  
-    <h3>Asgard Roleplay</h3><br>
+    <h2>Asgard Roleplay</h2><br>
     <img src="https://i.imgur.com/kUqxN4w.png" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
     <div class="w3-padding-32">
       <h4><b>Biz kimiz?</b></h4>
@@ -794,6 +824,25 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
 </script>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
 
 </body>
 </html>
